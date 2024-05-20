@@ -1,0 +1,30 @@
+<div class="h-40 flex justify-center items-center">
+    <h1 class="text-center text-4xl">Your historical F1 viewing stats</h1>
+</div>
+
+<div class="mx-auto w-9/12">
+    <h4 class="text-center">All F1 drivers</h4>
+<table class="table table-striped bg-gray-200 mx-auto rounded-md ">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th class="text-start px-3">Driver</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (driver of drivers.slice(min, max); track $index) {
+        <tr>
+            <td class="text-center">{{$index + 1}}</td>
+            <td class="px-3">{{driver.forename}} {{driver.surname}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div class="flex justify-around w-56">
+    <button (click)="min > 0 && prevPage()">Previous</button>
+    <button (click)="nextPage()">Next</button>
+</div>
+
+
+
+</div>
